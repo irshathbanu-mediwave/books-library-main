@@ -1,7 +1,13 @@
 const { v4: uuidv4 } = require("uuid");
 const { isValidISBN } = require("./isbn");
 
-const books = [];
+const books = [
+  {
+    id: "ybybynjn",
+    title: "testing",
+    isbn: 1861972717,
+  },
+];
 const allbooks = () => books;
 const getbook = ({ title, isbn }) => {
   if (isValidISBN(isbn)) {
@@ -12,7 +18,7 @@ const getbook = ({ title, isbn }) => {
       isbn,
     };
     books.push(b);
-  }
+  } else console.log("Invalid");
   return b;
 };
 const addbyid = ({ id }) => {
@@ -30,7 +36,7 @@ const updatebooks = ({ id, payload }) => {
   }
 
   books[idx]["title"] = payload["title"];
-
+  books[idx]["isbn"] = payload["isbn"];
   return books[idx];
 };
 

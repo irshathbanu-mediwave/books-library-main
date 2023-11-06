@@ -34,11 +34,11 @@
 		return (sum % 11 == 0); 
 	} 
 	
-	let isbn = "007462542X"; 
+	// let isbn = "007462542X"; 
 			
-	if (isValidISBN(isbn)) 
-	document.write("Valid"); 
-	else
-	document.write("Invalid"); 
+	// if (isValidISBN(isbn)) 
+	// document.write("Valid"); 
+	// else
+	// document.write("Invalid"); 
 		
 
