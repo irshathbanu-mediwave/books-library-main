@@ -24,7 +24,7 @@ app.get("/books", (req, res) => {
   const books = allbooks();
   res.send(books);
 });
-app.get("/books", (req, res) => {});
+//get id
 app.get("/books/:bookid", (req, res) => {
   const book = getbookbyid(req.query.bookid);
   console.log(book + req.query.bookid);
@@ -48,6 +48,12 @@ app.post("/books", (req, res) => {
     });
   }
   const book = addonebook(value);
+  if (!book) {
+    return next({
+      status: 400,
+      message: "invalid isbn",
+    });
+  }
   return res.send(book);
 });
 

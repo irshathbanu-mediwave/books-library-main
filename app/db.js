@@ -28,7 +28,8 @@ const addonebook = ({ title, isbn }) => {
     };
     books.push(b);
     return b;
-  } else console.log("Invalid");
+  } else return null
+  
 };
 const addRating = ({ rating, bookId }) => {
   const ratingId = uuidv4();
@@ -65,6 +66,7 @@ const updatebooks = ({ id, title }) => {
   }
   return null;
 };
+//delete book
 const deletebook = ( id ) => {
   const idx = books.findIndex((b) => b.id == id);
   const ratingidx= bookdsratings.findIndex((b) => b.bookId == id);
